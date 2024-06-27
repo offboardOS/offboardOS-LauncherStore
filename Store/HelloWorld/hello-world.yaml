@@ -1,0 +1,72 @@
+name: helloworld
+services:
+  helloworld:
+    container_name: helloworld
+    image: hello-world
+    network_mode: bridge
+    restart: unless-stopped
+    environment:
+      - LANG=C.UTF-8
+      - LC_ALL=C.UTF-8
+    ports:
+      - target: 8888
+        published: "8888"
+        protocol: tcp
+    labels:
+      icon: https://hub.docker.com/api/media/repos_logo/v1/library%2Fhello-world
+    offboardos:
+      envs:
+        - container: PATH
+          description:
+            en_us: ""
+        - container: LANG
+          description:
+            en_us: ""
+        - container: LC_ALL
+          description:
+            en_us: ""
+      ports:
+        - container: "8888"
+          description:
+            en_us: JupyterLab
+offboardos:
+  main: helloworld
+  image: hello-world
+  envs:
+    - container: LANG
+      description:
+        en_us: ""
+    - container: LC_ALL
+      description:
+        en_us: ""
+    - container: PATH
+      description:
+        en_us: ""
+  ports:
+    - container: "8888"
+      description:
+        en_us: HelloWorld
+  architectures:
+    - amd64
+    - arm64
+  author: OffBoardOSTeam
+  category: Testing
+  developer: OffBoardOSTeam
+  icon: https://hub.docker.com/api/media/repos_logo/v1/library%2Fhello-world
+  thumbnail: https://raw.githubusercontent.com/docker-library/docs/01c12653951b2fe592c1f93a13b4e289ada0e3a1/hello-world/logo.png
+  screenshot_link:
+    - https://storage.googleapis.com/static.configserverfirewall.com/images/docker/docker-hello-world.png
+  scheme: http
+  hostname: ""
+  port_map: "8888"
+  index: /
+  description:
+    en_us: Basicly OffBoardOS Hello World App
+  tagline:
+    en_us: Basicly OffBoardOS Hello World App
+  tips:
+    en_us: Basicly OffBoardOS Hello World App
+    before_install:
+      en_us: After installation, please check the token in the container log (Settings - TopRight - Terminal and Logs - Logs).
+  title:
+    en_us: HelloWorld
